@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SELECT superficie FROM etage")
+mycursor.execute("SELECT capacite FROM salle")
 
 myresult = mycursor.fetchall()
 area=0
@@ -17,7 +17,7 @@ area=0
 for x in myresult:
     area += x[0]
 
-print(f"La surface de la plateforme fait {area} m²")
+print(f"La capacité de toute la salle fait {area}")
 
 mycursor.close()
 mydb.close()
