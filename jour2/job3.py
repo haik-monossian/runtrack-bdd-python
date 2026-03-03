@@ -40,7 +40,9 @@ print("Données insérées avec succès.")
 
 # Exportation de la base de données
 output_file = "laplateforme.sql"
-dump_cmd = ["mysqldump", "-u", "root", "-pHaik2004.", "laplateforme"]
+# Utilisation du chemin absolu pour mysqldump sur Windows
+mysqldump_path = r"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump.exe"
+dump_cmd = [mysqldump_path, "-u", "root", "-pHaik2004.", "laplateforme"]
 
 try:
     print(f"Exportation vers '{output_file}'...")
@@ -49,4 +51,4 @@ try:
     print("Exportation réussie !")
 except Exception as e:
     print(f"Erreur lors de l'exportation : {e}")
-    print("Note: Assurez-vous que mysqldump est dans votre PATH.")
+    print("Note: Vérifiez que le chemin vers mysqldump.exe est correct dans le script.")
