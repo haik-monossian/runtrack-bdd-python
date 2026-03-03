@@ -13,5 +13,7 @@ mycursor.execute("CREATE TABLE etage (id INT AUTO_INCREMENT PRIMARY KEY, nom VAR
 
 mycursor.execute("CREATE TABLE salle (id INT AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(255), id_etage INT, capacite INT);")
 
+mydb.commit()
+
 mycursor.close()
 mydb.close()
